@@ -3,7 +3,7 @@
 
 app.use((req, res) => {
     console.log("I got a new request!")
-    res.send ({color: 'red'})
+    res.send('<h1>This is a response rendered with HTML</h1>')
 })
 
  app.listen(3000, () => {
