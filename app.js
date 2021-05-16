@@ -6,7 +6,11 @@
   //res.send('<h1>This is a response rendered with HTML</h1>')}) 
 
 app.get('/', (req, res) => {
-    res.send('HOME')
+    res.send('<h1> Home page </h1>')
+})
+
+app.get('/r/:subreddit', (req, res) => {
+    res.send('This is a subreddit')
 })
 
 
