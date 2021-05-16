@@ -15,6 +15,12 @@ app.get('/r/:subreddit', (req, res) => {
 })
 
 
+app.get('/r/:subreddit/:postId', (req, res) => {
+    const {subreddit, postId} = req.params
+    res.send(`Welcome to post ID number ${postId} on the subreddit about ${subreddit}`)
+})
+
+
 app.get('/cats', (req, res) => {
     res.send('meow')
 })
