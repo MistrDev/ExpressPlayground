@@ -10,7 +10,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/r/:subreddit', (req, res) => {
-    res.send('This is a subreddit')
+    const {subreddit} = req.params
+    res.send(`Welcome to the subreddit about ${subreddit}`)
 })
 
 
