@@ -27,6 +27,9 @@ app.get('/r/:subreddit/:postId', (req, res) => {
 
 app.get('/search', (req, res) => {
     const {q} = req.query;
+    if(!q){
+        res.send('Nothing found if nothing searched dummy')
+    }
     res.send(`Welcome to the page about ${q}`)
 })
 
