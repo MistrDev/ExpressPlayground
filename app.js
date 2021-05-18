@@ -6,6 +6,14 @@ app.get('/', (req, res) => {
     res.send('<h1> Home page </h1>')
 })
 
+app.get('/cats', (req, res) => {
+    res.send('meow')
+})
+
+app.get('/dogs', (req, res) => {
+    res.send('woof')
+})
+
 app.get('/r/:subreddit', (req, res) => {
     const {subreddit} = req.params
     res.send(`Welcome to the subreddit about ${subreddit}`)
@@ -17,13 +25,14 @@ app.get('/r/:subreddit/:postId', (req, res) => {
     res.send(`Welcome to post ID number ${postId} on the subreddit about ${subreddit}`)
 })
 
-
-app.get('/cats', (req, res) => {
-    res.send('meow')
+app.get('/search', (req, res) => {
+    const {q} = req.query;
+    res.send(`Welcome to the page about ${q}`)
 })
 
-app.get('/dogs', (req, res) => {
-    res.send('woof')
+
+app.get('*', (req, res) => {
+    res.send('I dont know that path bruh!')
 })
 
  app.listen(3000, () => {
