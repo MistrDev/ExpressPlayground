@@ -14,10 +14,6 @@ app.get('/dogs', (req, res) => {
     res.send('woof')
 })
 
-app.get('/r/:subreddit', (req, res) => {
-    const {subreddit} = req.params
-    res.send(`Welcome to the subreddit about ${subreddit}`)
-})
 
 
 app.get('/r/:subreddit/:postId', (req, res) => {
